@@ -1,0 +1,14 @@
+version: "3.4"
+services:
+  webdevt_first:
+    image: node:alpine
+    container_name: webdevt_first
+    entrypoint: /bin/sh
+    ports:
+      - 8000:8000
+    working_dir: /srv/app
+    volumes:
+      - type: bind
+        source: ./
+        target: /srv/app
+    tty: true
